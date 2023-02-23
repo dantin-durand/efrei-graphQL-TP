@@ -6,6 +6,8 @@ const CoursType = `
         room: String!
         matiere: Matiere!
         formateur: Formateur!
+        createdAt: String!
+        updatedAt: String!
     }
 `;
 

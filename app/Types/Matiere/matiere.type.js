@@ -5,6 +5,8 @@ const MatiereType = `
         parcours: Parcours
         cours: [Cours]
         notes: [Note]
+        createdAt: String!
+        updatedAt: String!
     }
 `;
 

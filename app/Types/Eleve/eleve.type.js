@@ -5,6 +5,8 @@ const EleveType = `
         lastname: String!
         classe: Classe!
         notes: [Note]
+        createdAt: String!
+        updatedAt: String!
     }
 `;
 

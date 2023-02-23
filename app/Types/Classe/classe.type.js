@@ -4,6 +4,8 @@ const ClasseType = `
         name: String!
         parcours: Parcours!
         eleves: [Eleve]
+        createdAt: String!
+        updatedAt: String!
     }
 `;
 

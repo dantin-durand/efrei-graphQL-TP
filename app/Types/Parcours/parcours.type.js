@@ -4,6 +4,8 @@ const ParcoursType = `
         name: String!
         matieres: [Matiere]
         classes: [Classe]
+        createdAt: String!
+        updatedAt: String!
     }
 `;
 

@@ -4,6 +4,8 @@ const FormateurType = `
         firstname: String!
         lastname: String!
         cours: [Cours]
+        createdAt: String!
+        updatedAt: String!
     }
 `;
 

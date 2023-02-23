@@ -24,6 +24,8 @@ model Matiere {
   parcoursId Int?
   parcours   Parcours? @relation(fields: [parcoursId], references: [id], onDelete: Cascade)
   notes      Note[]
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
 }
 
 model Cours {
@@ -35,6 +37,8 @@ model Cours {
   matiere     Matiere   @relation(fields: [matiereId], references: [id], onDelete: Cascade)
   formateurId Int
   formateur   Formateur @relation(fields: [formateurId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
 
 model Classe {
@@ -43,29 +47,37 @@ model Classe {
   parcoursId Int?
   parcours   Parcours? @relation(fields: [parcoursId], references: [id], onDelete: Cascade)
   eleves     Eleve[]
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
 }
 
 model Eleve {
-  id        Int     @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   firstname String
   lastname  String
   classeId  Int?
-  classe    Classe? @relation(fields: [classeId], references: [id], onDelete: SetNull)
+  classe    Classe?  @relation(fields: [classeId], references: [id], onDelete: SetNull)
   notes     Note[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Note {
-  id        Int     @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   note      Int
   eleveId   Int
-  eleve     Eleve   @relation(fields: [eleveId], references: [id], onDelete: Cascade)
+  eleve     Eleve    @relation(fields: [eleveId], references: [id], onDelete: Cascade)
   matiereId Int
-  matiere   Matiere @relation(fields: [matiereId], references: [id], onDelete: Cascade)
+  matiere   Matiere  @relation(fields: [matiereId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Formateur {
-  id        Int     @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   firstname String
   lastname  String
   cours     Cours[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

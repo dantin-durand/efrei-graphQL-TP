@@ -12,6 +12,18 @@
 
 If you want to use the GraphQL Playground, you can access it at `http://localhost:3000/graphql`
 
+## 📚 Architecture
+
+The project is divided into 3 main parts:
+
+```bash
+app/
+ ├── Controllers/
+ ├── Types/
+
+server.js
+```
+
 ## 📝 Authors
 
 Dantin Durand - [https://github.com/dantin-durand](https://github.com/dantin-durand)

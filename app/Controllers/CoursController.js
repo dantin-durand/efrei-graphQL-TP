@@ -34,7 +34,7 @@ const coursController = {
         await checkEntryById("matiere", matiereId);
         await checkEntryById("formateur", formateurId);
 
-        const result = await prisma.cours.create({
+        return await prisma.cours.create({
             data: {
                 start: dateStart,
                 end: dateEnd,
@@ -52,8 +52,6 @@ const coursController = {
             },
             ...include
         });
-        console.log("result -> ", result);
-        return result;
     },
     updateCours: async ({ id, start, end, room, matiereId, formateurId }) => {
         // check and format dates

@@ -4,6 +4,8 @@ const NoteType = `
         note: Float!
         eleve: Eleve!
         matiere: Matiere!
+        createdAt: String!
+        updatedAt: String!
     }
 `;
 

@@ -12,8 +12,8 @@ type Query {${joinText(
     ParcoursQuery,
     MatiereQuery,
     CoursQuery,
-    // ClasseQuery,
-    // EleveQuery,
+    ClasseQuery,
+    EleveQuery,
     // NoteQuery,
     // FormateurQuery
 )}}`;
