@@ -83,6 +83,14 @@ async function seedCours() {
         matiereId: 3,
         formateurId: 1,
       },
+      {
+        id: 4,
+        start: new Date("2023-01-01T12:00:00.000Z"),
+        end: new Date("2023-01-01T13:00:00.000Z"),
+        room: "Room 2",
+        matiereId: 1,
+        formateurId: 2,
+      },
     ],
   });
 }

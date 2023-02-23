@@ -15,7 +15,7 @@ type Mutation {${joinText(
     ClasseMutation,
     EleveMutation,
     NoteMutation,
-    // FormateurMutation
+    FormateurMutation
 )}}`;
 
 export default MutationType;

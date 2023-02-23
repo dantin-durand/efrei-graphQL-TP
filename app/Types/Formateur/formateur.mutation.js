@@ -1,7 +1,7 @@
 const FormateurMutation = `
-    addNote(note: Float!, eleveId: ID!, matiereId: ID!): Note
-    updateNote(id: ID!, note: Float!, eleveId: ID!, matiereId: ID!): Note
-    deleteNote(id: ID!): Boolean
+    addFormateur(firstname: String!, lastname: String!): Formateur!
+    updateFormateur(id: ID!, firstname: String!, lastname: String!): Formateur!
+    deleteFormateur(id: ID!): Formateur!
 `;
 
 export default FormateurMutation;

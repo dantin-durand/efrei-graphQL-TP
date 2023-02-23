@@ -15,7 +15,7 @@ type Query {${joinText(
     ClasseQuery,
     EleveQuery,
     NoteQuery,
-    // FormateurQuery
+    FormateurQuery
 )}}`;
 
 export default QueryType;
