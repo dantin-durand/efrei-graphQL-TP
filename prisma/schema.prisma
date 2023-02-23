@@ -1,0 +1,71 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Parcours {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  matieres Matiere[]
+  classes  Classe[]
+}
+
+model Matiere {
+  id         Int       @id @default(autoincrement())
+  name       String    @unique
+  cours      Cours[]
+  parcoursId Int?
+  parcours   Parcours? @relation(fields: [parcoursId], references: [id], onDelete: Cascade)
+  notes      Note[]
+}
+
+model Cours {
+  id          Int       @id @default(autoincrement())
+  start       DateTime
+  end         DateTime
+  room        String
+  matiereId   Int
+  matiere     Matiere   @relation(fields: [matiereId], references: [id], onDelete: Cascade)
+  formateurId Int
+  formateur   Formateur @relation(fields: [formateurId], references: [id], onDelete: Cascade)
+}
+
+model Classe {
+  id         Int       @id @default(autoincrement())
+  name       String
+  parcoursId Int?
+  parcours   Parcours? @relation(fields: [parcoursId], references: [id], onDelete: Cascade)
+  eleves     Eleve[]
+}
+
+model Eleve {
+  id        Int     @id @default(autoincrement())
+  firstname String
+  lastname  String
+  classeId  Int?
+  classe    Classe? @relation(fields: [classeId], references: [id], onDelete: SetNull)
+  notes     Note[]
+}
+
+model Note {
+  id        Int     @id @default(autoincrement())
+  note      Int
+  eleveId   Int
+  eleve     Eleve   @relation(fields: [eleveId], references: [id], onDelete: Cascade)
+  matiereId Int
+  matiere   Matiere @relation(fields: [matiereId], references: [id], onDelete: Cascade)
+}
+
+model Formateur {
+  id        Int     @id @default(autoincrement())
+  firstname String
+  lastname  String
+  cours     Cours[]
+}
