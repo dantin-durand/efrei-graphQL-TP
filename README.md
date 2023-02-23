@@ -6,7 +6,7 @@
 2. Install the dependencies with `yarn`
 3. Edit the `.env` file with your database credentials
 4. Run the migrations and seeders with `yarn database:initialize`
-5. Start the server with `nodemon` or `node index.js`
+5. Start the server with `nodemon` or `node server.js`
 
 ## 🚀 Usage
 
