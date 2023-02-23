@@ -23,7 +23,7 @@ const formateurController = {
     getFormateurById: async ({ id }) => {
         return checkEntryById("formateur", id, include);
     },
-    getForateurByMatiereId: async ({ id }) => {
+    getFormateursByMatiereId: async ({ id }) => {
         await checkEntryById("matiere", id);
 
         return await prisma.formateur.findMany({
@@ -39,7 +39,7 @@ const formateurController = {
             ...include
         });
     },
-    getFormateurByCoursId: async ({ id }) => {
+    getFormateursByCoursId: async ({ id }) => {
         await checkEntryById("cours", id);
 
         return await prisma.formateur.findMany({

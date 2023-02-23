@@ -1,6 +1,6 @@
 const EleveQuery = `
     getEleves: [Eleve]
-    getEleve(id: ID!): Eleve
+    getEleveById(id: ID!): Eleve
     getElevesByClasseId(id: ID!): [Eleve]
 `;
 

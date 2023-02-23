@@ -12,18 +12,15 @@
 
 If you want to use the GraphQL Playground, you can access it at `http://localhost:3000/graphql`
 
-## 🕵️‍♀️ Tests
-
-For run tests, use `yarn test`
-
-**⚠️ This command reset the database and run all tests.**
-
 ## 📚 Architecture
 
-This is the project architecture:
+The project is divided into 3 main parts:
+
+// architecture complete du projet
 
 ```bash
-├── server.js
+├── __tests__/
+
 ├── app/
 │   ├── Controllers/
 │   │   ├── ParcoursController.js
@@ -36,10 +33,14 @@ This is the project architecture:
 │       └── ...
 ├── helpers/
 ├── prisma/
-├── __tests__/
+├── server.js
 └── .env
 ```
 
 ## 📝 Authors
 
 Dantin Durand - [https://github.com/dantin-durand](https://github.com/dantin-durand)
+
+```
+
+```

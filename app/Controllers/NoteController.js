@@ -35,14 +35,14 @@ const noteController = {
             ...include
         });
     },
-    addNote: async ({ value, eleveId, matiereId }) => {
-        if (value < 0 || value > 20) throw new Error("La note doit être comprise entre 0 et 20");
+    addNote: async ({ note, eleveId, matiereId }) => {
+        if (note < 0 || note > 20) throw new Error("La note doit être comprise entre 0 et 20");
         await checkEntryById("eleve", eleveId);
         await checkEntryById("matiere", matiereId);
 
         return await prisma.note.create({
             data: {
-                value,
+                note,
                 eleve: {
                     connect: { id: parseInt(eleveId) }
                 },
@@ -53,8 +53,8 @@ const noteController = {
             ...include
         });
     },
-    updateNote: async ({ id, value, eleveId, matiereId }) => {
-        if (value < 0 || value > 20) throw new Error("La note doit être comprise entre 0 et 20");
+    updateNote: async ({ id, note, eleveId, matiereId }) => {
+        if (note < 0 || note > 20) throw new Error("La note doit être comprise entre 0 et 20");
         await checkEntryById("note", id);
         await checkEntryById("eleve", eleveId);
         await checkEntryById("matiere", matiereId);
@@ -64,7 +64,7 @@ const noteController = {
                 id: parseInt(id)
             },
             data: {
-                value,
+                note,
                 eleve: {
                     connect: { id: parseInt(eleveId) }
                 },
