@@ -14,7 +14,7 @@ type Mutation {${joinText(
     CoursMutation,
     ClasseMutation,
     EleveMutation,
-    // NoteMutation,
+    NoteMutation,
     // FormateurMutation
 )}}`;
 

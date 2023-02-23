@@ -4,6 +4,7 @@ import matiereController from "./MatiereController.js";
 import coursController from "./CoursController.js";
 import classeController from "./ClasseController.js";
 import eleveController from "./EleveController.js";
+import noteController from "./NoteController.js";
 
 
 // merge all controllers
@@ -12,7 +13,8 @@ const root = {
     ...matiereController,
     ...coursController,
     ...classeController,
-    ...eleveController
+    ...eleveController,
+    ...noteController
 };
 
 export default root;

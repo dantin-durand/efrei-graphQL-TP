@@ -14,7 +14,7 @@ type Query {${joinText(
     CoursQuery,
     ClasseQuery,
     EleveQuery,
-    // NoteQuery,
+    NoteQuery,
     // FormateurQuery
 )}}`;
 
